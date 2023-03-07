@@ -64,7 +64,7 @@ export default function Card(){
                             marginTop:"0px"
                          }}>
                                 <p style={{
-                                    color: "C2C2C2",
+                                    color: "#C2C2C2",
                                     lineHeight:"0px",
                                     fontSize:"9.43px",
                                     fontWeight:"Regular",
@@ -83,7 +83,11 @@ export default function Card(){
 
                     <div className='card--add'>
 
-                        <button className='buttonminus' onClick={substract}>
+                        <button className='buttonminus' 
+                        style={{
+                            backgroundColor: counter === 0 ? "#F0F0F0" : "#92CE08"
+                        }}
+                        onClick={substract}>
                             <svg width="14" height="3" viewBox="0 0 14 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.4774 1.0484H1.70184" stroke="white" stroke-width="2.02041" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
