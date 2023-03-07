@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto&display=swap');
+
+body{
+    background-color: #F5F5F5;
+}
+
+.card {
+    font-family: 'Outfit';
+    padding: 20px;
+}
+
+.card--soustotal {
+    font-weight: 500 ;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.card--price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 18px;
+    margin-bottom: 16px;
+}
+
+.card--product {
+    display: flex;
+    align-items: center;
+    font-size: 10.78px;
+    margin-bottom: 16px;
+}
+
+.card--add {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+}
+
+.card--add > button {
+    background-color: #92CE08;
+    border: none;
+    border-radius: 4.04px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.buttonplus{
+    padding: 5px;
+}
+
+.buttonminus{
+    padding: 10.4px 5px;
+}
+
+.annuler {
+    width: 185.88px;
+    height: 39.06px;
+    font-size: 9.29px;
+    font-weight: 600;
+    background-color: white;
+    border: none;
+    border-radius: 3.71px;
+    box-shadow: 0px 2.78571px 0.928571px -1.85714px rgba(0, 0, 0, 0.2), 0px 1.85714px 1.85714px rgba(0, 0, 0, 0.14), 0px 0.928571px 4.64286px rgba(0, 0, 0, 0.12);
+}
+
+.addpanier {
+    width: 185.88px;
+    height: 39.06px;
+    font-size: 9.29px;
+    font-weight: 600;
+    background-color: #92CE08;
+    border: none;
+    border-radius: 3.71px;
+    box-shadow: 0px 2.78571px 0.928571px -1.85714px rgba(0, 0, 0, 0.2), 0px 1.85714px 1.85714px rgba(0, 0, 0, 0.14), 0px 0.928571px 4.64286px rgba(0, 0, 0, 0.12);
+}
