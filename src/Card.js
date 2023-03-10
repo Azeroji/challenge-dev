@@ -1,10 +1,14 @@
 import './Card.css'
 import React from 'react'
 import image from './image.png'
+import check from './badge.png'
+import "./Modal.css";
 
 const formatter = new Intl.NumberFormat('de-DE')
 
 export default function Card(){
+    const [annuler,setAnnuler] = React.useState(false)
+    const [ajouter,setAjouter] = React.useState(false)
     const [counter, setCounter] = React.useState(1)
     function add(){
         setCounter(counter + 1)
@@ -16,9 +20,22 @@ export default function Card(){
         }
     }
 
+    const [modal, setModal] = React.useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
+    if(modal) {
+        document.body.classList.add('active-modal')
+    } else {
+        document.body.classList.remove('active-modal')
+    }
+
 
     return(
-        <div style={{
+        <div>
+        {!annuler ? <div style={{
             height:"264px",
             width:"484.9px",
             backgroundColor:"white",
@@ -112,12 +129,34 @@ export default function Card(){
                     marginTop:'16px',
                 }}>
 
-                    <button className='annuler'>ANNULER</button>
-                    <button className='addpanier'>AJOUTER AU PANIER</button>
+                    <button className='annuler'  onClick={toggleModal}>ANNULER</button>
+                    <button className='addpanier' onClick={()=>{setAjouter(true);setAnnuler(true)}}>AJOUTER AU PANIER</button>
 
                 </div>
 
             </div>
+            {modal && (
+        <div className="modal">
+          <div onClick={toggleModal} className="overlay"></div>
+          <div className='modal-content'>
+            <p>Êtes vous sûr de vouloir annuler ?</p>
+            <p style={{
+                fontSize:"13px",
+                fontWeight:"300",
+                color:"black",
+            }}>Cette action risque de suprimmer ce produit de votre panier.</p>
+            <div className='modal-content-div'>
+            <button className='Non' onClick={toggleModal}>Fermer</button>
+            <button className='Oui' onClick={() => {setAnnuler(true)}}>Confirmer</button>
+            </div>
+          </div>
         </div>
+      )}
+        </div> : 
+        
+        <div style={{display:"flex",alignItems:"center",columnGap:"5px",marginTop:"20vh"}}><p>{ajouter ? "Produit ajouté" : "Achat annulé"} avec succées</p><img src={check} height="16px" /></div>
+
+        }
+    </div>
     )
 }
